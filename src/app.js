@@ -50,3 +50,26 @@ navLinks.forEach(link => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        // Validate form fields
+        const name = form.querySelector('#name').value.trim();
+        const email = form.querySelector('#email').value.trim();
+        const phone = form.querySelector('#phone').value.trim();
+
+        if (name === '' || email === '' || phone === '') {
+            alert('Please fill out all required fields.');
+            return;
+        }
+
+        // Display success message
+        alert('Thank you for your message. We will contact you soon.');
+
+        // Optionally, you can reset the form after submission
+        form.reset();
+    });
+});
