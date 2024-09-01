@@ -1,29 +1,120 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Styling */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+/* Navigation Menu Styling */
+nav {
+    position: relative;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu li a:hover,
+.menu li a.active {
+    color: #ff6600;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Section Styling */
+section {
+    padding: 4rem 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section:nth-of-type(even) {
+    background-color: #e2e2e2;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
     color: #333;
 }
 
-header, footer {
+/* Footer Styling */
+footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
-}
-
-#services {
-    padding: 2rem;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: #e2e2e2;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
 }
